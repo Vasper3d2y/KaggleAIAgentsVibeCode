@@ -1,0 +1,7 @@
+rules:
+  - id: detect-hardcoded-google-api-key
+    pattern-regex: '\b(AIzaSy|AQ\.)[A-Za-z0-9_\-]*'
+    message: "Critical Security Violation: A hardcoded Google/Gemini API key or key prefix was detected. Exposing API keys in source code poses a major security risk. Please load API keys securely from environment variables or a secret manager."
+    languages:
+      - python
+    severity: ERROR
